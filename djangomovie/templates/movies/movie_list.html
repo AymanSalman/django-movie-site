@@ -1,0 +1,14 @@
+{% extends 'base_layout.html' %}
+{% block content %}
+<div class="movie-list">
+    {% for movie in movies %}
+    <div class="movie-item">
+        <a href="{% url 'movie:detail' slug=movie.slug %}">
+            <img src="{{ movie.thump.url }}" alt="{{ movie.title }}">
+            <h1 class="movie-title">{{ movie.title }}</h1>
+        </a>
+        <p class="movie-year">{{ movie.year_of_release }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

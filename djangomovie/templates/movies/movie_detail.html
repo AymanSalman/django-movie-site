@@ -1,0 +1,36 @@
+{% extends 'base_layout.html' %}
+{% block content %}
+<div class="movie-detail">
+    <div class="movie">
+        <img src="{{ movie.thump.url }}" width="600" style="display: block; margin-left: auto; margin-right: auto;">
+        <h1>Movie Name: {{ movie.title }}</h1>
+        <p><b>Description:</b> {{ movie.description }}</p>
+        <p><strong>Year Of Release:</strong> {{ movie.year_of_release }}</p>
+        <p><strong>Directors:</strong> {{ movie.director }}</p>
+        <p><strong>Main Actor 1:</strong> {{ movie.actor_1 }}</p>
+        <p><strong>Main Actor 2:</strong> {{ movie.actor_2 }}</p>
+        <p><strong>Main Actor 3:</strong> {{ movie.actor_3 }}</p>
+        <p><strong>Main Actor 4:</strong> {{ movie.actor_4 }}</p>
+    </div>
+    {% if user.is_authenticated %}
+    <div class="comment-form">
+        <h2>Add a Comment</h2>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    {% else %}
+    <p><a href="{% url 'accounts:login' %}">Log in</a> to add a comment.</p>
+    {% endif %}
+    <div class="comments-section">
+        <h2>Comments</h2>
+        {% for comment in comments %}
+        <div class="comment">
+            <p><strong>{{ comment.author }} ({{ comment.created_at }}):</strong><br> {{ comment.content }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
