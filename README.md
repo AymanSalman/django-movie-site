@@ -1,29 +1,17 @@
-# Django Movie Site
+# MovieProject
 
-This project is a simple movie database website built using Django, where users can browse a list of movies, view details of each movie, and add comments on movies. The site also includes user authentication for logging in and signing up.
+This is a Django-based project where users can view a list of movies, see detailed information about each movie, and leave comments. 
+Only registered users can add comments, while guest users can view comments and movie details.
 
 ## Features
-- Movie listing with details such as description, year of release, director, and main actors.
-- User authentication for logging in and signing up.
-- Commenting functionality (only for logged-in users).
-- Simple CSS styling.
 
-## Folder Structure
-- **accounts/**: Contains user authentication functionality (login and signup).
-- **assets/**: Contains the CSS file (`mystyle.css`).
-- **djangomovie/**: Main project folder with settings and configurations.
-- **media/**: Contains movie images.
-- **movies/**: Contains movie-related views, models, and URLs.
-- **templates/**: Contains HTML files for rendering views.
+- **Admin Role**: Only the admin can create and manage the movie list.
+- **Registered Users**: Logged-in users can add comments on movie pages.
+- **Guest Users**: Guests can view the movie list, movie details, and existing comments, but cannot add comments without registering.
 
-## Setup Instructions
+## Installation
 
-### Prerequisites
-- Python 3.x
-- Django (Ensure you have Django installed by running: `pip install django`)
-- Any browser (e.g., Chrome, Firefox)
-
-### Steps to Run the Project
+Follow these steps to run the project locally:
 
 1. **Clone the repository**:
     ```bash
@@ -31,50 +19,31 @@ This project is a simple movie database website built using Django, where users 
     cd django-movie-site
     ```
 
-2. **Set up virtual environment** (optional but recommended):
+2. **Set up a virtual environment**:
     ```bash
     python -m venv venv
-    source venv/bin/activate   # For MacOS/Linux
-    venv\Scripts\activate      # For Windows
+    source venv/bin/activate   # On Windows use: venv\Scripts\activate
     ```
 
-3. **Navigate to the main project folder**:
+3. **Install the required dependencies**:
+    Since there's no `requirements.txt` file yet, you'll need to manually install Django:
     ```bash
-    cd movieProject/djangomovie
+    pip install django
     ```
 
-4. **Run migrations**:
-    Before starting the server, apply the migrations to set up the database:
+4. **Run the server**:
     ```bash
-    python manage.py migrate
+    python manage.py runserver
     ```
 
-5. **Start the development server**:
-    Run the Django development server:
-    ```bash
-    python manage.py runserver 8080
+5. **Access the project**:
+    Open your web browser and navigate to:
+    ```
+    http://localhost:8080
     ```
 
-    This will start the server on `localhost:8080`. You can open it in your browser:
-    ```
-    http://localhost:8080/
-    ```
+## How to use
 
-6. **Media Files (Movie Thumbnails)**:
-    Make sure the `media/` folder contains movie images as per the structure, so the thumbnails can be displayed correctly on the website.
-
-### Notes
-- By default, the site will run on `localhost:8080`. If you need to change the port, modify the command:
-    ```bash
-    python manage.py runserver 8080
-    ```
-    Change `8080` to any other available port.
-
-- The current code includes basic movie management and user authentication. Future updates may include more advanced features.
-
-### Known Issues
-- Ensure the media folder structure is correct for movie thumbnails to display.
-- Commenting functionality is only available for logged-in users.
-
-## License
-This project is open-source and available under the MIT License.
+- **Sign Up**: Register for an account to add comments to any movie page.
+- **Login**: If you already have an account, log in to leave comments.
+- **Explore**: Browse the list of movies, view details, and read comments from other users.
