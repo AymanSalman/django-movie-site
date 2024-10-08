@@ -26,9 +26,9 @@ Follow these steps to run the project locally:
     ```
 
 3. **Install the required dependencies**:
-    Since there's no `requirements.txt` file yet, you'll need to manually install Django:
+    Make sure you have the `requirements.txt` file in the project root directory. Then, run:
     ```bash
-    pip install django
+    pip install -r requirements.txt
     ```
 
 4. **Run the server**:
