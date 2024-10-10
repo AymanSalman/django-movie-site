@@ -26,8 +26,9 @@ Follow these steps to run the project locally:
     ```
 
 3. **Install the required dependencies**:
-    Make sure you have the `requirements.txt` file in the project root directory. Then, run:
+    Ensure you have the `requirements.txt` file in the project root directory. Then, run:
     ```bash
+    cd djangomovie
     pip install -r requirements.txt
     ```
 
@@ -39,7 +40,7 @@ Follow these steps to run the project locally:
 5. **Access the project**:
     Open your web browser and navigate to:
     ```
-    http://localhost:8080
+    http://127.0.0.1:8000
     ```
 
 ## How to use
