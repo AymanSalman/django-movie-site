@@ -54,9 +54,8 @@ Follow these steps to run the project locally:
    ```
 
 2. **Remove the Virtual Environment**:
-   Navigate to venv die and run this command:
+   Navigate to venv dir and run this command:
     ```bash
-    python -m venv venv
     rm -rf venv   # On Windows use: rmdir /s /q venv
     ```
 
