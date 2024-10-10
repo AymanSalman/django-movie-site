@@ -43,6 +43,23 @@ Follow these steps to run the project locally:
     http://127.0.0.1:8000
     ```
 
+## Deactivating and Removing the Virtual Environment
+
+Follow these steps to run the project locally:
+
+1. **Deactivate the Virtual Environment**:
+   When you're done working in the virtual environment, you can deactivate it by running the following command:
+   ```bash
+   source venv/bin/deactivate    # On Windows use: venv\Scripts\deactivate
+   ```
+
+2. **Remove the Virtual Environment**:
+   Navigate to venv die and run this command:
+    ```bash
+    python -m venv venv
+    rm -rf venv   # On Windows use: rmdir /s /q venv
+    ```
+
 ## How to use
 
 - **Sign Up**: Register for an account to add comments to any movie page.
