@@ -71,7 +71,7 @@ After finishing the project, you can remove the virtual environment to free up s
 
 Follow these steps to run the project using Docker in PowerShell:
 
-1. **Create a directory for the project**:
+1. **Create a directory for the project(example directory: Desktop)**:
     ```powershell
     mkdir C:\Users\USER\Desktop\django-movie-docker
     ```
@@ -136,7 +136,7 @@ After finishing with the project, you can remove the Docker container and image 
 
 5. **Remove the Docker image** (replace `image-id` or `image-name` with the actual image ID or name):
     ```powershell
-    docker rmi <image-id>
+    docker rmi <image-id>:<tag>
     ```
 
 
