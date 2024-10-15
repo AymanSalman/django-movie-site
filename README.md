@@ -9,9 +9,16 @@ Only registered users can add comments, while guest users can view comments and 
 - **Registered Users**: Logged-in users can add comments on movie pages.
 - **Guest Users**: Guests can view the movie list, movie details, and existing comments, but cannot add comments without registering.
 
+## Requirements for Docker Setup
+
+Before you proceed with running the project via Docker, ensure that you have the following installed:
+
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed on your machine.
+- PowerShell, which is available by default on most Windows systems.
+
 ## Installation
 
-Follow these steps to run the project locally:
+### First Option: Running the Project Locally
 
 1. **Clone the repository**:
     ```bash
@@ -28,7 +35,6 @@ Follow these steps to run the project locally:
 3. **Install the required dependencies**:
     Ensure you have the `requirements.txt` file in the project root directory. Then, run:
     ```bash
-    cd djangomovie
     pip install -r requirements.txt
     ```
 
@@ -43,23 +49,81 @@ Follow these steps to run the project locally:
     http://127.0.0.1:8000
     ```
 
-## Deactivating and Removing the Virtual Environment
+#### Remove the Virtual Environment (Optional)
 
-Follow these steps to run the project locally:
+After finishing the project, you can remove the virtual environment to free up space.
 
-1. **Deactivate the Virtual Environment**:
-   When you're done working in the virtual environment, you can deactivate it by running the following command:
-   ```bash
-   source venv/bin/deactivate    # On Windows use: venv\Scripts\deactivate
-   ```
+1. **Deactivate the virtual environment**:
+    Run this command to deactivate the environment:
+    ```bash
+    source venv/bin/deactivate    # On Windows use: venv\Scripts\deactivate
+    ```
 
-2. **Remove the Virtual Environment**:
-   Navigate to venv dir and run this command:
+2. **Remove the virtual environment**:
+    Navigate to the `venv` directory and remove it:
     ```bash
     rm -rf venv   # On Windows use: rmdir /s /q venv
     ```
 
-## How to use
+---
+
+### Second Option: Running the Project via Docker (Using PowerShell)
+
+Follow these steps to run the project using Docker in PowerShell:
+
+1. **Start Docker Desktop** (if not already running):
+    ```powershell
+    Start-Process -NoNewWindow -FilePath "C:\Program Files\Docker\Docker\Docker Desktop.exe"
+    ```
+
+2. **Build the Docker image directly from the GitHub repository**:
+    ```powershell
+    docker build -t django-movie-site:v1.0 https://github.com/AymanSalman/django-movie-site.git#main:djangomovie
+    ```
+
+3. **Run the Docker container**:
+    ```powershell
+    docker run -it -p 8000:8000 django-movie-site:v1.0
+    ```
+
+4. **Access the project in your web browser**:
+    Open your browser and navigate to:
+    ```
+    http://127.0.0.1:8000
+    ```
+
+#### Remove the Docker Container and Image (Optional)
+
+After finishing with the project, you can remove the Docker container and image to free up space.
+
+1. **List all running containers** to find the container ID or name:
+    ```powershell
+    docker ps
+    ```
+
+2. **Stop the running container** (replace `container-id` or `container-name` with the actual container ID or name from the previous command):
+    ```powershell
+    docker stop <container-id>
+    ```
+
+3. **Remove the stopped container**:
+    ```powershell
+    docker rm <container-id>
+    ```
+
+4. **List all Docker images** to find the image name or ID:
+    ```powershell
+    docker images
+    ```
+
+5. **Remove the Docker image** (replace `image-id` or `image-name` with the actual image ID or name):
+    ```powershell
+    docker rmi <image-id>
+    ```
+
+---
+
+## How to Use
 
 - **Sign Up**: Register for an account to add comments to any movie page.
 - **Login**: If you already have an account, log in to leave comments.
