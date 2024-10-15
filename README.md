@@ -92,17 +92,23 @@ Follow these steps to run the project using Docker in PowerShell:
     Start-Process -NoNewWindow -FilePath "C:\Program Files\Docker\Docker\Docker Desktop.exe"
     ```
 
-5. **Build the Docker image directly from the GitHub repository**:
+5. **Install the required dependencies**:
+    Ensure you have the `requirements.txt` file in the project root directory. Then, run:
+    ```powershell
+    pip install -r requirements.txt
+    ```
+
+6. **Build the Docker image directly from the GitHub repository**:
     ```powershell
     docker build -t django-movie-site:v1.0 .
     ```
 
-6. **Run the Docker container**:
+7. **Run the Docker container**:
     ```powershell
     docker run -it -p 8000:8000 django-movie-site:v1.0
     ```
 
-7. **Access the project in your web browser**:
+8. **Access the project in your web browser**:
     Open your browser and navigate to:
     ```
     http://127.0.0.1:8000
