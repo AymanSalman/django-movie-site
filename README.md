@@ -71,26 +71,43 @@ After finishing the project, you can remove the virtual environment to free up s
 
 Follow these steps to run the project using Docker in PowerShell:
 
-1. **Start Docker Desktop** (if not already running):
+1. **Create a directory for the project**:
+    ```powershell
+    mkdir C:\Users\USER\Desktop\django-movie-docker
+    ```
+
+2. **Navigate to the newly created folder**:
+    ```powershell
+    cd C:\Users\USER\Desktop\django-movie-docker
+    ```
+
+3. **Clone the repository into this folder**:
+    ```powershell
+    git clone https://github.com/AymanSalman/django-movie-site.git
+    cd django-movie-site\djangomovie
+    ```
+
+4. **Start Docker Desktop** (if not already running):
     ```powershell
     Start-Process -NoNewWindow -FilePath "C:\Program Files\Docker\Docker\Docker Desktop.exe"
     ```
 
-2. **Build the Docker image directly from the GitHub repository**:
+5. **Build the Docker image directly from the GitHub repository**:
     ```powershell
-    docker build -t django-movie-site:v1.0 https://github.com/AymanSalman/django-movie-site.git#main:djangomovie
+    docker build -t django-movie-site:v1.0 .
     ```
 
-3. **Run the Docker container**:
+6. **Run the Docker container**:
     ```powershell
     docker run -it -p 8000:8000 django-movie-site:v1.0
     ```
 
-4. **Access the project in your web browser**:
+7. **Access the project in your web browser**:
     Open your browser and navigate to:
     ```
     http://127.0.0.1:8000
     ```
+
 
 #### Remove the Docker Container and Image (Optional)
 
