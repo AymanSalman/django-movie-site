@@ -121,7 +121,7 @@ After finishing with the project, you can remove the Docker container and image 
 
 1. **List all running containers** to find the container ID or name:
     ```powershell
-    docker ps
+    docker ps -a
     ```
 
 2. **Stop the running container** (replace `container-id` or `container-name` with the actual container ID or name from the previous command):
