@@ -20,30 +20,36 @@ Before you proceed with running the project via Docker, ensure that you have the
 
 ### First Option: Running the Project Locally
 
-1. **Clone the repository**:
+1. **Navigate to the location where you want to clone the project(example directory: Desktop)**:
+    ```bash
+    cd C:\Users\USER\Desktop
+    ```
+
+2. **Clone the repository**:
     ```bash
     git clone https://github.com/AymanSalman/django-movie-site.git
     cd django-movie-site
     ```
 
-2. **Set up a virtual environment**:
+3. **Set up a virtual environment**:
     ```bash
     python -m venv venv
     source venv/bin/activate   # On Windows use: venv\Scripts\activate
     ```
 
-3. **Install the required dependencies**:
+4. **Install the required dependencies**:
     Ensure you have the `requirements.txt` file in the project root directory. Then, run:
     ```bash
+    cd djangomovie
     pip install -r requirements.txt
     ```
 
-4. **Run the server**:
+5. **Run the server**:
     ```bash
     python manage.py runserver
     ```
 
-5. **Access the project**:
+6. **Access the project**:
     Open your web browser and navigate to:
     ```
     http://127.0.0.1:8000
@@ -56,6 +62,7 @@ After finishing the project, you can remove the virtual environment to free up s
 1. **Deactivate the virtual environment**:
     Run this command to deactivate the environment:
     ```bash
+    cd ..
     source venv/bin/deactivate    # On Windows use: venv\Scripts\deactivate
     ```
 

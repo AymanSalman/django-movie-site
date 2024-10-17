@@ -7,3 +7,9 @@ class CommentForm(forms.ModelForm):
         model = models.Comment
         fields = ['content']
         labels = {'content': 'Add your comment:', }
+
+
+class MovieForm(forms.ModelForm):
+    class Meta:
+        model = models.Movie
+        fields = '__all__'
