@@ -1,6 +1,14 @@
 #!/bin/bash
 
-if [ "$DATABASE" = "mysql"]
+echo "SQL_ROOT_PASSWORD: $SQL_ROOT_PASSWORD"
+echo "SQL_USER: $SQL_USER"
+echo "SQL_PASSWORD: $SQL_PASSWORD"
+echo "SQL_DATABASE: $SQL_DATABASE"
+echo "SQL_HOST: $SQL_HOST"
+echo "SQL_PORT: $SQL_PORT"
+
+
+if [ "$DATABASE" = "mysql" ]
 then
     echo "waiting for mysql..."
     while ! nc -z $SQL_HOST $SQL_PORT; do
