@@ -74,78 +74,51 @@ After finishing the project, you can remove the virtual environment to free up s
 
 ---
 
-### Running the Project via Docker (Using PowerShell)
+### Running the Project via Docker Compose (Using CMD)
 
-Follow these steps to run the project using Docker in PowerShell:
+Follow these steps to run the project using Docker via CMD:
 
-1. **Create a directory for the project(example directory: Desktop)**:
-    ```powershell
-    mkdir C:\Users\USER\Desktop\django-movie-docker
+1. **Navigate to the location where you want to clone the project(example directory: Desktop)**:
+    ```bash
+    cd C:\Users\USER\Desktop
     ```
 
-2. **Navigate to the newly created folder**:
-    ```powershell
-    cd C:\Users\USER\Desktop\django-movie-docker
-    ```
-
-3. **Clone the repository into this folder**:
-    ```powershell
+2. **Clone the repository**:
+    ```bash
     git clone https://github.com/AymanSalman/django-movie-site.git
-    cd django-movie-site\djangomovie
+    cd django-movie-site
     ```
 
-4. **Start Docker Desktop** (if not already running):
-    ```powershell
-    Start-Process -NoNewWindow -FilePath "C:\Program Files\Docker\Docker\Docker Desktop.exe"
+3. **Install the required dependencies**:
+    Ensure you are in the `docker-compose.yaml` file in the project directory (use 'cd' command). Then, run:
+    ```bash
+    docker compose up --build
     ```
 
-5. **Build the Docker image using the Dockerfile**:
-    Make sure you are in the directory where the `Dockerfile` is located (`django-movie-site\djangomovie`). Run the following command to build the image:
-    ```powershell
-    docker build -t django-movie-site:v1.0 .
-    ```
-
-6. **Run the Docker container**:
-    Once the image is built, run the container using the following command:
-    ```powershell
-    docker run -it -p 8000:8000 django-movie-site:v1.0
-    ```
-
-7. **Access the project in your web browser**:
+4. **Access the project in your web browser**:
     Open your browser and navigate to:
     ```
     http://127.0.0.1:8000
     ```
 
-#### Remove the Docker Container and Image (Optional)
+#### Remove the Docker Containers and Image (Optional)
 
-After finishing with the project, you can remove the Docker container and image to free up space.
+After finishing with the project, you can remove the Docker container and images to free up space.
 
-1. **List all running containers** to find the container ID or name:
-    ```powershell
-    docker ps -a
+. **To Stop and Remove All Containers in a Docker Compose Project**:
+    ```bash
+    docker compose down
     ```
 
-2. **Stop the running container** (replace `container-id` or `container-name` with the actual container ID or name from the previous command):
-    ```powershell
-    docker stop <container-id>
+. **To Remove containers and associated volumes**:
+    ```bash
+    docker compose down --volumes
     ```
 
-3. **Remove the stopped container**:
-    ```powershell
-    docker rm <container-id>
+. **To Remove containers, volumes, and images created by 'docker compose up'**:
+    ```bash
+    docker compose down --volumes --rmi all
     ```
-
-4. **List all Docker images** to find the image name or ID:
-    ```powershell
-    docker images
-    ```
-
-5. **Remove the Docker image** (replace `image-id` or `image-name` with the actual image ID or name):
-    ```powershell
-    docker rmi <image-id>:<tag>
-    ```
-
 
 ---
 
