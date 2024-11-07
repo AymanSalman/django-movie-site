@@ -13,7 +13,7 @@ Only registered users can add comments, while guest users can view comments and 
 
 Before you proceed with running the project via Docker, ensure that you have the following installed:
 
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed on your machine.
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed on your machine and up.
 - PowerShell, which is available by default on most Windows systems.
 
 ## Installation
@@ -89,7 +89,7 @@ Follow these steps to run the project using Docker via CMD:
     cd django-movie-site
     ```
 
-3. **Install the required dependencies**:
+3. **Build and Start the Docker Environment**:
     Ensure you are in the `docker-compose.yaml` file in the project directory (use 'cd' command). Then, run:
     ```bash
     docker compose up --build
