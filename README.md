@@ -105,17 +105,17 @@ Follow these steps to run the project using Docker via CMD:
 
 After finishing with the project, you can remove the Docker container and images to free up space.
 
-. **To Stop and Remove All Containers in a Docker Compose Project**:
+1. **To Stop and Remove All Containers in a Docker Compose Project**:
     ```bash
     docker compose down
     ```
 
-. **To Remove containers and associated volumes**:
+2. **To Remove containers and associated volumes**:
     ```bash
     docker compose down --volumes
     ```
 
-. **To Remove containers, volumes, and images created by 'docker compose up'**:
+3. **To Remove containers, volumes, and images created by 'docker compose up'**:
     ```bash
     docker compose down --volumes --rmi all
     ```
