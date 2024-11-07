@@ -18,7 +18,8 @@
 --
 -- Table structure for table `auth_group`
 --
-
+CREATE DATABASE  IF NOT EXISTS  movies;
+use movies;
 DROP TABLE IF EXISTS `auth_group`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -102,7 +103,7 @@ CREATE TABLE `auth_user` (
   `email` varchar(0) DEFAULT NULL,
   `is_staff` tinyint(4) DEFAULT NULL,
   `is_active` tinyint(4) DEFAULT NULL,
-  `date_joined` varchar(10) DEFAULT NULL,
+  `date_joined` DATE DEFAULT NULL,
   `first_name` varchar(0) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -251,7 +252,7 @@ DROP TABLE IF EXISTS `django_session`;
 CREATE TABLE `django_session` (
   `session_key` varchar(32) DEFAULT NULL,
   `session_data` varchar(54) DEFAULT NULL,
-  `expire_date` varchar(10) DEFAULT NULL
+  `expire_date` DATE DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
