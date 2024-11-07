@@ -74,7 +74,7 @@ After finishing the project, you can remove the virtual environment to free up s
 
 ---
 
-### Running the Project via Docker Compose (Using CMD)
+### Running the Project via Docker Compose
 
 Follow these steps to run the project using Docker via CMD:
 
