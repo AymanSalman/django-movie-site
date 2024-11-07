@@ -1,5 +1,5 @@
 FROM python:3.10-slim
-WORKDIR /app
+WORKDIR /
 RUN apt-get update
 RUN apt-get install gcc default-libmysqlclient-dev -y
 RUN pip install --upgrade pip
